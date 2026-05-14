@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  arma-bot:
+    build: .
+    container_name: arma-discord-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./logs:/app/logs  # Optional: for logging
+    environment:
+      - TZ=America/New_York  # Set your timezone
