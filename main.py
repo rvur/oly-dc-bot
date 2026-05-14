@@ -18,6 +18,7 @@ headers = {
     "X-Fields": "name, gang_name, progress, gang_id",
     "Authorization": f"Token {TOKEN}"
 }
+
 config = {}
 prev_state = {}
 
@@ -104,7 +105,7 @@ async def cur_cartels(interaction: discord.Interaction):
     await interaction.response.send_message(embed=embed)
 
 @bot.tree.command(name='id', description='Shows tracked gang ID')
-async def cur_id(interaction: discord.Integration):
+async def cur_id(interaction: discord.Interaction):
     guild_config = config.get(str(interaction.guild_id), {"gang_id": 0})
     embed = discord.Embed(title='Gang ID', color=discord.Color.red())
     embed.add_field(name=f"Gang ID: {guild_config['gang_id']}", value="", inline=False)
