@@ -120,9 +120,8 @@ async def cur_cartels(interaction: discord.Integration):
 @bot.tree.command(name='id', description='Shows tracked gang_id')
 async def cur_id(interaction: discord.Integration):
     embed = discord.Embed(title='Gang ID', color=discord.Color.red())
-    embed.add_field(name=f"Gang ID: {GAND_ID}", value="", inline=False)
-    channel = bot.get_channel(CHANNEL_ID)
-    await channel.send(embed=embed)
+    embed.add_field(name=f"Gang ID: {GANG_ID}", value="", inline=False)
+    await interaction.response.send_message(embed=embed)
 
 def get_gang_info(gang_id:int) -> list:
     headers = {
