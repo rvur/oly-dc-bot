@@ -9,7 +9,5 @@ services:
       - apparmor:unconfined
     env_file:
       - .env
-    volumes:
-      - ./logs:/app/logs  # Optional: for logging
     environment:
       - TZ=America/New_York  # Set your timezone
